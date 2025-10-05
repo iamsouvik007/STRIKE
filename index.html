@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Mouse cursor glow effect -->
+    <div class="cursor-glow" aria-hidden="true"></div>
+    
     <!-- Decorative background layers -->
     <div class="bg-effects" aria-hidden="true">
       <div class="bg-grid"></div>
@@ -44,12 +47,12 @@
           <span class="brand-text">STRIKE</span>
         </a>
         <nav class="nav" aria-label="Primary">
+          <a href="#home" class="nav-link">Home</a>
           <a href="#courses" class="nav-link">Courses</a>
-          <a href="#features" class="nav-link">Features</a>
-          <a href="#community" class="nav-link">Community</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#about" class="nav-link">About Us</a>
+          <a href="#contact" class="nav-link">Contact Us</a>
         </nav>
-        <a href="#cta" class="btn btn--primary">Join Now</a>
+        <a href="#login" class="btn btn--primary">Login</a>
       </div>
       <div class="header-line" aria-hidden="true"></div>
     </header>
@@ -76,116 +79,277 @@
           </div>
           <div class="hero-visual" aria-hidden="true">
             <div class="glow-ring"></div>
-            <div class="device">
-              <div class="device-status">
-                <span class="status-dot"></span>
-                <span class="status-dot"></span>
-                <span class="status-dot"></span>
+            <div class="code-container">
+              <div class="code-header">
+                <div class="code-buttons">
+                  <span class="code-button red"></span>
+                  <span class="code-button yellow"></span>
+                  <span class="code-button green"></span>
+                </div>
+                <div class="code-title">STRIKE Course Demo</div>
               </div>
-              <div class="device-screen">
-                <div class="matrix">
-                  <span></span><span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span><span></span>
+              <div class="code-editor">
+                <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+                <div class="code-content">
+                  <div class="code-line">#include &lt;iostream&gt;</div>
+                  <div class="code-line">using namespace std;</div>
+                  <div class="code-line"></div>
+                  <div class="code-line">int main() {</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "STRIKE" &lt;&lt; endl;</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Best DSA Course" &lt;&lt; endl;</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Gen AI Integration" &lt;&lt; endl;</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Live Mentorship" &lt;&lt; endl;</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</div>
+                  <div class="code-line">}</div>
                 </div>
               </div>
-              <div class="device-base"></div>
+              <div class="terminal-output">
+                <div class="terminal-header-small">Output</div>
+                <div class="output-content">
+                  <div class="output-line">STRIKE</div>
+                  <div class="output-line">Best DSA Course</div>
+                  <div class="output-line">Gen AI Integration</div>
+                  <div class="output-line">Live Mentorship</div>
+                  <div class="cursor">_</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-       About 
-      <section class="section-about" id="courses">
-        <div class="container about-grid">
-          <div class="about-copy">
-            <h2 class="section-title">Built for the Learning Revolution</h2>
-            <p class="section-lead">
+      <!-- Image Scroll Section -->
+      <section class="section-image-scroll">
+        <div class="scroll-container">
+          <div class="scroll-image-wrapper">
+            <img src="./strike1.jpg" alt="STRIKE Course 1" class="scroll-image scroll-left">
+            <img src="./strike2.jpg" alt="STRIKE Course 2" class="scroll-image scroll-right">
+          </div>
+          <div class="scroll-vignette"></div>
+        </div>
+      </section>
+
+       Our Mission 
+      <section class="section-mission" id="about">
+        <div class="container">
+          <div class="mission-header">
+            <h2 class="section-title text-center">Our Mission</h2>
+            <p class="section-lead text-center">Built for the Learning Revolution</p>
+            <p class="mission-description text-center">
               STRIKE blends rigorous DSA foundations with cutting-edge GenAI, guided mentorship, and production-grade project building.
             </p>
-            <ul class="about-list">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00FFF0" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Elite curriculum covering data structures, algorithms, and AI workflows
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00FFF0" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Human mentorship layered with AI superpowers
-              </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00FFF0" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Real projects that ship — build a portfolio that speaks
-              </li>
-            </ul>
           </div>
-          <div class="about-media" aria-hidden="true">
-            <div class="glass-card">
-              <div class="glass-title">
-                <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="#9333EA" d="M3 5h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"/>
-                </svg>
-                Course Tracks
+          
+          <div class="mission-cards">
+            <div class="mission-card reveal">
+              <div class="mission-card-image">
+                <img src="./dsa.jpg" alt="Live DSA" class="card-img">
               </div>
-              <div class="tracks">
-                <span class="track">DSA Mastery</span>
-                <span class="track">GenAI Systems</span>
-                <span class="track">System Design</span>
-                <span class="track">Full-Stack Projects</span>
+              <div class="mission-card-content">
+                <h3 class="mission-card-title">Live DSA Mastery</h3>
+                <p class="mission-card-text">Interactive live sessions covering data structures and algorithms with real-time problem solving and instant feedback.</p>
+                <div class="mission-features">
+                  <span class="feature-tag">Live Coding</span>
+                  <span class="feature-tag">Problem Solving</span>
+                  <span class="feature-tag">Instant Feedback</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mission-card reveal">
+              <div class="mission-card-image">
+                <img src="./ai.jpg" alt="Gen AI" class="card-img">
+              </div>
+              <div class="mission-card-content">
+                <h3 class="mission-card-title">Gen AI Integration</h3>
+                <p class="mission-card-text">Cutting-edge AI integration to enhance learning experience with intelligent tutoring and personalized guidance.</p>
+                <div class="mission-features">
+                  <span class="feature-tag">AI Tutoring</span>
+                  <span class="feature-tag">Smart Analysis</span>
+                  <span class="feature-tag">Personalized</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mission-card reveal">
+              <div class="mission-card-image">
+                <div class="premium-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" fill="var(--primary)" stroke="var(--primary)" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="mission-card-content">
+                <h3 class="mission-card-title">Premium Features</h3>
+                <p class="mission-card-text">Exclusive premium features including 1-on-1 mentorship, priority support, and advanced project modules.</p>
+                <div class="mission-features">
+                  <span class="feature-tag">1-on-1 Mentorship</span>
+                  <span class="feature-tag">Priority Support</span>
+                  <span class="feature-tag">Advanced Projects</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-       Features 
+       What Makes STRIKE Different 
       <section class="section-features" id="features">
         <div class="container">
           <h2 class="section-title text-center">What Makes STRIKE Different</h2>
-          <p class="section-lead text-center">Designed by engineers, for engineers — polished, purposeful, and powerful.</p>
+          <p class="section-lead text-center">We don't just teach syntax - we build deep understanding from first principles</p>
 
           <div class="features-grid">
-             Feature: DSA Mastery 
+             First Principles Teaching 
             <article class="feature-card reveal">
               <div class="feature-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="#00FFF0" d="M10 20v-6H3v-4h7V4l9 8z"/>
+                  <path fill="#00FFF0" d="M12 2l3.09 6.26L22 9l-5 4.87 1.18 6.88L12 17.77l-6.18 2.98L7 14.87 2 9l6.91-1.74L12 2z"/>
                 </svg>
               </div>
-              <h3 class="feature-title">DSA Mastery</h3>
-              <p class="feature-text">A curated ladder of problems and strategies that build enduring algorithmic intuition.</p>
+              <h3 class="feature-title">First Principles Thinking</h3>
+              <p class="feature-text">We teach how things work internally in depth, building understanding from the ground up rather than memorizing syntax.</p>
             </article>
 
-             Feature: AI Learning 
+             Live Interactive Learning 
             <article class="feature-card reveal">
               <div class="feature-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="#9333EA" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/>
+                  <path fill="#9333EA" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
               </div>
-              <h3 class="feature-title">AI Learning</h3>
-              <p class="feature-text">Harness GenAI safely and effectively — prompts, agents, evaluation, and deployment.</p>
+              <h3 class="feature-title">Live Lectures & Doubt Sessions</h3>
+              <p class="feature-text">Interactive live sessions with real-time doubt solving and immediate clarifications from expert instructors.</p>
             </article>
 
-             Feature: Mentorship 
+             24/7 Support 
             <article class="feature-card reveal">
               <div class="feature-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="#00FFF0" d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-3 0-9 1.5-9 4.5V21h18v-2.5c0-3-6-4.5-9-4.5z"/>
+                  <path fill="#00FFF0" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6L12 10.5 8.5 8 12 5.5 15.5 8zM8.5 16l3.5-2.5 3.5 2.5-3.5 2.5L8.5 16z"/>
                 </svg>
               </div>
-              <h3 class="feature-title">Mentorship</h3>
-              <p class="feature-text">One-on-one guidance and structured feedback to accelerate your growth.</p>
+              <h3 class="feature-title">24 Hours Doubt Support</h3>
+              <p class="feature-text">Get your doubts resolved anytime with our 24/7 messaging support system and active community.</p>
             </article>
 
-             Feature: Real Projects 
+             Hands-on Projects 
             <article class="feature-card reveal">
               <div class="feature-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="#9333EA" d="M21 16V8l-8-5-8 5v8l8 5 8-5zM5 8l7-4 7 4-7 4-7-4zm7 6l-7-4v4l7 4 7-4v-4l-7 4z"/>
+                  <path fill="#9333EA" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                 </svg>
               </div>
-              <h3 class="feature-title">Real Projects</h3>
-              <p class="feature-text">Ship production-grade apps and systems that stand out in your portfolio.</p>
+              <h3 class="feature-title">Projects on Every Topic</h3>
+              <p class="feature-text">Hands-on projects and practical problems for each module to reinforce learning and build real-world skills.</p>
             </article>
+
+             AI-Powered Learning 
+            <article class="feature-card reveal">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#00FFF0" d="M12 1L9 9l-8 3l8 3l3 8l3-8l8-3l-8-3z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">AI Support Integration</h3>
+              <p class="feature-text">Smart AI assistance to guide your learning journey, provide hints, and offer personalized recommendations.</p>
+            </article>
+
+             Problem-Based Learning 
+            <article class="feature-card reveal">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#9333EA" d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM4 19h16v2H4v-2zM4 6h5V4H4c-1.1 0-2 .9-2 2v1h2V6zm16-2c0-1.1-.9-2-2-2h-5v2h5v1h2V4h-0z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Problems on Everything</h3>
+              <p class="feature-text">Comprehensive problem sets covering every concept with varying difficulty levels to ensure mastery.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Free Courses Section -->
+      <section class="section-free-courses">
+        <div class="container">
+          <h2 class="section-title text-center">Our Free Courses</h2>
+          <p class="section-lead text-center">Get started with our comprehensive free course offerings</p>
+          
+          <div class="free-courses-grid">
+            <div class="course-card reveal">
+              <div class="course-image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 17L12 22L22 17" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 12L12 17L22 12" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Data Structures & Algorithms</h3>
+                <p class="course-description">Master the fundamentals of DSA with comprehensive coverage from basics to advanced topics.</p>
+                <div class="course-stats">
+                  <span class="stat">50+ Problems</span>
+                  <span class="stat">Live Sessions</span>
+                  <span class="stat">Free</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="course-card reveal">
+              <div class="course-image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 9V5C14 3.9 13.1 3 12 3S10 3.9 10 5V9M4 9H20L19 19H5L4 9Z" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 13V17" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Web Development</h3>
+                <p class="course-description">Complete web development journey from HTML/CSS to modern frameworks and backend.</p>
+                <div class="course-stats">
+                  <span class="stat">10+ Projects</span>
+                  <span class="stat">Full Stack</span>
+                  <span class="stat">Free</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="course-card reveal">
+              <div class="course-image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" stroke="var(--ai-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="3" stroke="var(--ai-green)" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">Generative AI</h3>
+                <p class="course-description">Explore the world of Gen AI, prompting techniques, and building AI-powered applications.</p>
+                <div class="course-stats">
+                  <span class="stat">AI Projects</span>
+                  <span class="stat">Hands-on</span>
+                  <span class="stat">Free</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="course-card reveal">
+              <div class="course-image-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--magenta-action)" stroke-width="2"/>
+                  <path d="M9 9H15V15H9V9Z" stroke="var(--magenta-action)" stroke-width="2"/>
+                  <path d="M9 9L15 15" stroke="var(--magenta-action)" stroke-width="2"/>
+                  <path d="M15 9L9 15" stroke="var(--magenta-action)" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="course-content">
+                <h3 class="course-title">System Design</h3>
+                <p class="course-description">Learn scalable system architecture and design patterns for large-scale applications.</p>
+                <div class="course-stats">
+                  <span class="stat">Case Studies</span>
+                  <span class="stat">Architecture</span>
+                  <span class="stat">Free</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -247,6 +411,15 @@
         </div>
       </section>
 
+      <!-- Meet Your Instructor Section -->
+      <section class="section-instructor">
+        <div class="container">
+          <h2 class="section-title text-center">Meet Your Instructor</h2>
+          <p class="section-lead text-center">Content will be added here later</p>
+          <!-- Instructor content to be added -->
+        </div>
+      </section>
+
        CTA Banner 
       <section class="section-cta" id="cta">
         <div class="container cta-inner">
@@ -254,17 +427,74 @@
             <h2 class="cta-title">Ready to Level Up?</h2>
             <p class="cta-text">Get early access to STRIKE and join a community serious about building skill and shipping work.</p>
           </div>
-          <a href="#contact" class="btn btn--inverted btn--glow">Request Invite</a>
+          <a href="#contact" class="btn btn--inverted btn--glow">Get Started</a>
         </div>
       </section>
     </main>
 
+    <!-- Contact Us Section -->
+    <section class="section-contact" id="contact">
+      <div class="container">
+        <h2 class="section-title text-center">Contact Us</h2>
+        <p class="section-lead text-center">Get in touch with us and start your learning journey</p>
+        
+        <div class="contact-content">
+          <div class="contact-form-wrapper">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number">
+              </div>
+              
+              <div class="form-group">
+                <label for="course" class="form-label">Course Interest</label>
+                <select id="course" name="course" class="form-select">
+                  <option value="">Select a course</option>
+                  <option value="dsa">Data Structures & Algorithms</option>
+                  <option value="webdev">Web Development</option>
+                  <option value="genai">Generative AI</option>
+                  <option value="system-design">System Design</option>
+                  <option value="all">All Courses</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your learning goals..." rows="4"></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn--primary btn--lg contact-submit">Send Message</button>
+            </form>
+          </div>
+          
+          <div class="contact-image">
+            <img src="./msg.jpg" alt="Contact us" class="contact-img">
+            <div class="contact-overlay">
+              <div class="contact-info">
+                <h3>Let's Connect!</h3>
+                <p>Ready to transform your coding journey? We're here to help you every step of the way.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
      Footer 
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer">
       <div class="container footer-inner">
         <a class="brand" href="#home" aria-label="STRIKE Home">
           <svg class="brand-mark" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-            <use href="#"></use>
             <defs>
               <linearGradient id="g-logo-footer" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stop-color="#00FFF0" />
