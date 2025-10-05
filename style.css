@@ -225,14 +225,18 @@ body:hover::before {
 .floating-spark:nth-child(9) { left: 80%; animation-delay: 8s; }
 .floating-spark:nth-child(10) { left: 10%; animation-delay: 1s; }
 
-/* Header */
+/* Header - Liquid Glass Transparent Theme */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  backdrop-filter: saturate(140%) blur(10px);
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.3));
-  border-bottom: 1px solid var(--line);
+  backdrop-filter: saturate(180%) blur(8px);
+  background: linear-gradient(180deg, 
+    rgba(13, 17, 23, 0.15), 
+    rgba(13, 17, 23, 0.08)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
 }
 .header-inner {
   display: flex;
@@ -278,15 +282,18 @@ body:hover::before {
   align-items: center;
 }
 .nav-link {
-  color: #c9d1d9;
+  color: rgba(201, 209, 217, 0.9);
   text-decoration: none;
   font-size: var(--step--1);
-  padding: .5rem .8rem;
-  border-radius: 12px;
-  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: .6rem 1rem;
+  border-radius: 16px;
+  transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   font-weight: 500;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-link::before {
@@ -296,8 +303,12 @@ body:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 240, 0.1), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 240, 0.15), 
+    rgba(147, 51, 234, 0.15)
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .nav-link:hover::before {
@@ -305,13 +316,15 @@ body:hover::before {
 }
 
 .nav-link:hover {
-  color: var(--primary);
-  background: rgba(0, 255, 240, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
   box-shadow: 
-    0 0 0 1px rgba(0, 255, 240, 0.2) inset,
-    0 4px 12px rgba(0, 255, 240, 0.15),
-    0 0 20px rgba(0, 255, 240, 0.1);
-  transform: translateY(-1px);
+    0 0 0 1px rgba(0, 255, 240, 0.3) inset,
+    0 8px 25px rgba(0, 255, 240, 0.2),
+    0 0 30px rgba(0, 255, 240, 0.15);
+  transform: translateY(-2px) scale(1.02);
+  border: 1px solid rgba(0, 255, 240, 0.2);
 }
 
 .btn {
@@ -340,10 +353,14 @@ body:hover::before {
   --btn-bg: linear-gradient(180deg, rgba(0, 255, 240, 0.14), rgba(0, 255, 240, 0.06));
   --btn-brd: rgba(0, 255, 240, 0.45);
   box-shadow: 0 0 0 2px rgba(0, 255, 240, 0.12) inset, 0 12px 40px rgba(0, 255, 240, 0.16);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0, 255, 240, 0.25);
 }
+
 .btn--primary {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn--primary::before {
@@ -368,22 +385,128 @@ body:hover::before {
   width: 300px;
   height: 300px;
 }
+
+/* Professional Orange Glow Effect for Get Early Access Button */
+.btn--orange {
+  --btn-bg: linear-gradient(135deg, rgba(255, 140, 0, 0.12), rgba(255, 165, 0, 0.08));
+  --btn-brd: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.15) inset, 0 12px 40px rgba(255, 140, 0, 0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 140, 0, 0.3) !important;
+  background: var(--btn-bg) !important;
+}
+
+.btn--orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 140, 0, 0.6), 
+    rgba(255, 165, 0, 0.4), 
+    rgba(255, 185, 0, 0.2)
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn--orange:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 
+    0 0 0 2px rgba(255, 140, 0, 0.4) inset,
+    0 20px 60px rgba(255, 140, 0, 0.3),
+    0 0 40px rgba(255, 140, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(255, 165, 0, 0.1)) !important;
+  border: 1px solid rgba(255, 140, 0, 0.5) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.btn--orange:hover::before {
+  left: 100%;
+}
 .btn--ghost {
-  --btn-bg: rgba(255, 255, 255, 0.02);
-  --btn-brd: rgba(255, 255, 255, 0.12);
+  --btn-bg: rgba(255, 255, 255, 0.03);
+  --btn-brd: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.btn--ghost::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1), 
+    rgba(255, 255, 255, 0.05)
+  );
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
 .btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+    0 10px 30px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+.btn--ghost:hover::before {
+  left: 100%;
+}
+
 .btn--inverted {
-  --btn-bg: linear-gradient(180deg, rgba(147, 51, 234, 0.2), rgba(147, 51, 234, 0.08));
-  --btn-brd: rgba(147, 51, 234, 0.55);
+  --btn-bg: linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(147, 51, 234, 0.08));
+  --btn-brd: rgba(147, 51, 234, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.btn--inverted::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(147, 51, 234, 0.3), 
+    rgba(147, 51, 234, 0.15)
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
 .btn--glow {
-  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.22) inset, 0 14px 48px rgba(147, 51, 234, 0.24);
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.25) inset, 0 14px 48px rgba(147, 51, 234, 0.3);
 }
+
 .btn--inverted:hover {
-  transform: translateY(-1px);
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(147, 51, 234, 0.12));
+  box-shadow: 
+    0 0 0 2px rgba(147, 51, 234, 0.4) inset,
+    0 15px 45px rgba(147, 51, 234, 0.4),
+    0 0 30px rgba(147, 51, 234, 0.3);
+  border: 1px solid rgba(147, 51, 234, 0.5);
+}
+
+.btn--inverted:hover::before {
+  left: 100%;
 }
 
 /* Hero */
