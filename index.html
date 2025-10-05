@@ -30,6 +30,11 @@
       <div class="floating-spark"></div>
     </div>
 
+    <!-- Scrollable crosshair decoration -->
+    <div class="crosshair-decoration" aria-hidden="true">
+      <div class="bg-crosshair"></div>
+    </div>
+
     <!-- Header / Navbar -->
     <header class="site-header" id="home">
       <div class="container header-inner">
@@ -89,17 +94,30 @@
                 <div class="code-title">STRIKE Course Demo</div>
               </div>
               <div class="code-editor">
-                <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div>
+                <div class="line-numbers">
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+                  <span>10</span>
+                  <span>11</span>
+                </div>
                 <div class="code-content">
                   <div class="code-line">#include &lt;iostream&gt;</div>
                   <div class="code-line">using namespace std;</div>
-                  <div class="code-line"></div>
+                  <div class="code-line">// Code Your Future</div>
                   <div class="code-line">int main() {</div>
-                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "STRIKE" &lt;&lt; endl;</div>
-                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Best DSA Course" &lt;&lt; endl;</div>
-                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Gen AI Integration" &lt;&lt; endl;</div>
-                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; "Live Mentorship" &lt;&lt; endl;</div>
-                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;return 0;</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;startJourney();</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;master("Gen AI + DSA");</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;build("Amazing Projects");</div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;land("Dream Job");</div>
+                  <div class="code-line"></div>
+                  <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;return 0; // ✓</div>
                   <div class="code-line">}</div>
                 </div>
               </div>
@@ -537,52 +555,6 @@
       </div>
     </footer>
 
-    <script>
-      // Professional minimalistic mouse glow effect with smooth following
-      document.addEventListener('DOMContentLoaded', function() {
-        const cursorGlow = document.querySelector('.cursor-glow');
-        let mouseX = 0;
-        let mouseY = 0;
-        let glowX = 0;
-        let glowY = 0;
-        
-        if (cursorGlow) {
-          // Track mouse position
-          document.addEventListener('mousemove', function(e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Clean hover detection for interactive elements
-            const nearElement = document.elementFromPoint(mouseX, mouseY);
-            const isInteractive = nearElement && (
-              nearElement.matches('button, a, .btn, .nav-link, .feature-card, .mission-card, .course-card-flip') ||
-              nearElement.closest('button, a, .btn, .nav-link, .feature-card, .mission-card, .course-card-flip')
-            );
-            
-            // Toggle professional interactive state
-            if (isInteractive) {
-              cursorGlow.classList.add('interactive');
-            } else {
-              cursorGlow.classList.remove('interactive');
-            }
-          });
-          
-          // Smooth following animation
-          function updateGlow() {
-            // Smooth interpolation for connected feel
-            glowX += (mouseX - glowX) * 0.15;
-            glowY += (mouseY - glowY) * 0.15;
-            
-            // Update glow position
-            cursorGlow.style.left = glowX + 'px';
-            cursorGlow.style.top = glowY + 'px';
-            
-            requestAnimationFrame(updateGlow);
-          }
-          
-          updateGlow();
-        }
-      });
-    </script>
+
   </body>
 </html>

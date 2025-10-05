@@ -208,6 +208,43 @@ body:hover::before {
   mix-blend-mode: screen;
 }
 
+/* Scrollable Crosshair Container */
+.crosshair-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Professional Crosshair Background that scrolls with page */
+.bg-crosshair {
+  position: absolute;
+  top: 2rem;
+  left: 8rem;
+  width: 250px;
+  height: 250px;
+  background: url('./crosshair.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.15;
+  filter: brightness(1.2) contrast(1.1);
+  animation: crosshairPulse 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes crosshairPulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+
 /* Floating Sparks */
 .floating-spark {
   position: absolute;
@@ -643,7 +680,7 @@ body:hover::before {
   flex-wrap: wrap;
 }
 
-/* Typing Animation */
+/* Pure CSS Typing Animation */
 .typing-container {
   height: 30px;
   margin: 20px 0 30px 0;
@@ -653,18 +690,87 @@ body:hover::before {
   position: relative;
 }
 
-.typing-text {
-  display: inline-block;
-  animation: typing 6s steps(30) infinite;
-  overflow: hidden;
+.code-content {
+  flex: 1;
+  padding: 12px 16px;
+  color: #c9d1d9;
+  font-size: 12px;
+  line-height: 1;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  background: #1e1e1e;
+  position: relative;
   white-space: nowrap;
-  border-right: 2px solid var(--ai-green);
-  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
-.typing-text::before {
-  content: '> Activating AI Intelligence...';
-  animation: changeText 6s infinite;
+.code-line:nth-child(1) { animation-delay: 0.3s; color: #ff7b72; text-shadow: 0 0 8px rgba(255, 123, 114, 0.6); }
+.code-line:nth-child(2) { animation-delay: 0.6s; color: #ff7b72; text-shadow: 0 0 8px rgba(255, 123, 114, 0.6); }
+.code-line:nth-child(3) { animation-delay: 0.9s; color: #7c3aed; text-shadow: 0 0 8px rgba(124, 58, 237, 0.6); }
+.code-line:nth-child(4) { animation-delay: 1.2s; color: #7c3aed; text-shadow: 0 0 8px rgba(124, 58, 237, 0.6); }
+.code-line:nth-child(5) { animation-delay: 1.5s; color: #f97583; text-shadow: 0 0 8px rgba(249, 117, 131, 0.6); }
+.code-line:nth-child(6) { animation-delay: 1.8s; color: #79c0ff; text-shadow: 0 0 8px rgba(121, 192, 255, 0.6); }
+.code-line:nth-child(7) { animation-delay: 2.1s; color: #79c0ff; text-shadow: 0 0 8px rgba(121, 192, 255, 0.6); }
+.code-line:nth-child(8) { animation-delay: 2.4s; color: #79c0ff; text-shadow: 0 0 8px rgba(121, 192, 255, 0.6); }
+.code-line:nth-child(9) { animation-delay: 2.7s; color: #79c0ff; text-shadow: 0 0 8px rgba(121, 192, 255, 0.6); }
+.code-line:nth-child(10) { animation-delay: 3.0s; color: #c9d1d9; text-shadow: 0 0 8px rgba(201, 209, 217, 0.6); }
+.code-line:nth-child(11) { animation-delay: 3.3s; color: #f97583; text-shadow: 0 0 8px rgba(249, 117, 131, 0.6); }
+
+.output-line:nth-child(1) { animation-delay: 4.2s; }
+.output-line:nth-child(2) { animation-delay: 4.5s; }
+.output-line:nth-child(3) { animation-delay: 4.8s; }
+
+.cursor {
+  display: inline-block;
+  background: var(--ai-green);
+  width: 8px;
+  height: 16px;
+  animation: blink 1s infinite, showCursor 0.1s forwards;
+  animation-delay: 6s, 6s;
+  opacity: 0;
+}
+
+@keyframes typewriterLoop {
+  0%, 10% { opacity: 0; }
+  12%, 65% { opacity: 1; }
+  75%, 100% { opacity: 0; }
+}
+
+@keyframes terminalOutput {
+  0%, 40% { opacity: 0; }
+  45%, 70% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+@keyframes showCursor {
+  to { opacity: 1; }
+}
+
+@keyframes typeTerminal {
+  0% {
+    opacity: 1;
+    width: 0;
+    border-right: 2px solid #00ff9f;
+  }
+  90% {
+    border-right: 2px solid #00ff9f;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    border-right: 2px solid transparent;
+  }
+}
+
+@keyframes infiniteLoop {
+  0%, 85% {
+    opacity: 1;
+  }
+  90%, 100% {
+    opacity: 0;
+  }
 }
 
 /* Glow Ring Animation */
@@ -689,9 +795,9 @@ body:hover::before {
 .code-container {
   --br: 20px;
   width: min(820px, 95%);
-  height: 420px;
+  height: 460px;
   border-radius: var(--br);
-  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  background: transparent;
   border: 2px solid rgba(0, 255, 240, 0.4);
   box-shadow: 
     var(--shadow),
@@ -720,8 +826,9 @@ body:hover::before {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: linear-gradient(180deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.9));
+  background: rgba(0, 255, 240, 0.05);
   border-bottom: 1px solid rgba(0, 255, 240, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .code-buttons {
@@ -747,53 +854,112 @@ body:hover::before {
 
 .code-editor {
   display: flex;
-  background: #0d1117;
-  min-height: 240px;
+  background: transparent;
+  min-height: 280px;
   flex: 1;
 }
 
 .line-numbers {
-  padding: 20px 12px;
-  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 10px;
+  background: rgba(0, 255, 240, 0.02);
   color: #6e7681;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 13px;
+  line-height: 1.4;
   text-align: right;
   user-select: none;
   border-right: 1px solid rgba(0, 255, 240, 0.2);
-  min-width: 50px;
+  min-width: 40px;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.line-numbers div {
+  height: 18px;
+  margin: 0;
+  padding: 0;
 }
 
 .code-content {
   flex: 1;
-  padding: 20px;
+  padding: 12px 16px;
   color: #c9d1d9;
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  background: transparent;
+  position: relative;
+  white-space: pre;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 0;
 }
 
 .code-line {
+  white-space: nowrap;
+  overflow: hidden;
   opacity: 0;
-  text-shadow: 0 0 4px rgba(201, 209, 217, 0.3);
-  animation: typewriterLoop 8s infinite;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  animation: typewriterLoop 10s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(201, 209, 217, 0.6), 0 0 2px rgba(255, 255, 255, 0.3);
+  font-weight: 500;
 }
 
-.code-line:nth-child(1) { animation-delay: 0.2s; color: #ff7b72; }
-.code-line:nth-child(2) { animation-delay: 0.6s; color: #ff7b72; }
-.code-line:nth-child(3) { animation-delay: 1.0s; }
-.code-line:nth-child(4) { animation-delay: 1.4s; color: #f97583; }
-.code-line:nth-child(5) { animation-delay: 1.8s; color: #79c0ff; }
-.code-line:nth-child(6) { animation-delay: 2.2s; color: #79c0ff; }
-.code-line:nth-child(7) { animation-delay: 2.6s; color: #79c0ff; }
-.code-line:nth-child(8) { animation-delay: 3.0s; color: #79c0ff; }
-.code-line:nth-child(9) { animation-delay: 3.4s; color: #f97583; }
-.code-line:nth-child(10) { animation-delay: 3.8s; color: #f97583; }
+#codeDisplay {
+  min-height: 200px;
+}
+
+
+
+@keyframes codeCursorAnimation {
+  0%, 3% { opacity: 1; }
+  4%, 60% { opacity: 0; }
+  61%, 80% { opacity: 1; }
+  81%, 100% { opacity: 0; }
+}
+
+@keyframes terminalCursorAnimation {
+  0%, 66% { opacity: 0; }
+  67%, 80% { opacity: 1; }
+  81%, 95% { opacity: 0; }
+  96%, 100% { opacity: 1; }
+}
+
+@keyframes terminalLoop {
+  0%, 66% { 
+    opacity: 0; 
+    width: 0; 
+  }
+  67% { 
+    opacity: 1; 
+    width: 0;
+    border-right: 2px solid #00ff9f;
+  }
+  77% { 
+    opacity: 1; 
+    width: 100%;
+    border-right: 2px solid #00ff9f;
+  }
+  80% { 
+    opacity: 1; 
+    width: 100%;
+    border-right: 2px solid transparent;
+  }
+  85%, 95% { 
+    opacity: 0; 
+    width: 100%;
+  }
+  96%, 100% { 
+    opacity: 0; 
+    width: 0;
+  }
+}
 
 .terminal-output {
-  background: #000;
+  background: transparent;
   border-top: 2px solid rgba(0, 255, 240, 0.3);
   flex: 1;
   display: flex;
@@ -802,44 +968,45 @@ body:hover::before {
 
 .terminal-header-small {
   padding: 10px 20px;
-  background: rgba(0, 255, 240, 0.15);
+  background: rgba(0, 255, 240, 0.05);
   color: var(--primary);
   font-size: 13px;
   font-weight: 600;
   border-bottom: 1px solid rgba(0, 255, 240, 0.2);
   text-shadow: 0 0 4px rgba(0, 255, 240, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .output-content {
-  padding: 20px;
-  color: var(--ai-green);
-  font-size: 15px;
-  line-height: 22px;
+  padding: 14px 16px;
+  color: #00ff9f;
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  background: transparent;
+  flex: 1;
+  min-height: 60px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex: 1;
+  gap: 0;
 }
 
 .output-line {
+  white-space: nowrap;
+  overflow: hidden;
   opacity: 0;
-  text-shadow: 0 0 6px rgba(0, 255, 159, 0.4);
-  animation: terminalOutput 8s infinite;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  animation: terminalOutput 10s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 255, 159, 0.7), 0 0 3px rgba(0, 255, 159, 0.5);
+  font-weight: 600;
 }
 
-.output-line:nth-child(1) { animation-delay: 4.2s; }
-.output-line:nth-child(2) { animation-delay: 4.6s; }
-.output-line:nth-child(3) { animation-delay: 5.0s; }
-.output-line:nth-child(4) { animation-delay: 5.4s; }
-
-.cursor {
-  display: inline-block;
-  background: var(--ai-green);
-  width: 8px;
-  height: 16px;
-  animation: blink 1s infinite, showCursor 0.1s forwards;
-  animation-delay: 7.5s, 7.5s;
-  opacity: 0;
+#terminalOutput {
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 255, 159, 0.6);
 }
 .device-status {
   display: flex;
@@ -1507,18 +1674,6 @@ body:hover::before {
   animation: scanline 8s linear infinite;
   pointer-events: none;
 }
-
-.code-line {
-  margin: 15px 0;
-  opacity: 0;
-  animation: typeIn 0.5s forwards;
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-}
-
-.code-line:nth-child(1) { animation-delay: 0.5s; }
-.code-line:nth-child(2) { animation-delay: 1.5s; }
-.code-line:nth-child(3) { animation-delay: 2.5s; }
-.code-line:nth-child(4) { animation-delay: 3.5s; }
 
 .code-comment {
   color: #6a9955;
