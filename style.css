@@ -49,6 +49,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   height: 100%;
@@ -226,7 +229,7 @@ body:hover::before {
   left: 25rem;
   width: 230px;
   height: 230px;
-  background: url('./crosshair.png') no-repeat center center;
+  background: url('./assets/crosshair.png') no-repeat center center;
   background-size: contain;
   opacity: 0.50;
   filter: brightness(1.2) contrast(1.1);
@@ -447,7 +450,7 @@ body:hover::before {
   left: 50%;
   width: 48px;
   height: 48px;
-  background-image: url('./logo.png');
+  background-image: url('./assets/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1174,8 +1177,8 @@ body:hover::before {
   position: relative;
   overflow: hidden;
   background: 
-    url('./strike1.jpg'),
-    url('./strike2.jpg'),
+    url('./assets/strike1.jpg'),
+    url('./assets/strike2.jpg'),
     linear-gradient(135deg, rgba(13, 17, 23, 0.7), rgba(0, 31, 63, 0.6));
   background-size: 120% auto, 120% auto, 100% 100%;
   background-position: -20% center, 120% center, center;
@@ -1721,20 +1724,19 @@ body:hover::before {
 .course-image {
   width: 100%;
   height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1rem;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .course-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  display: block;
 }
 
 .course-details {
@@ -1848,6 +1850,40 @@ body:hover::before {
   border-radius: 15px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.course-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--rich-black);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 240, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 255, 240, 0.2);
+}
+
+.course-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 240, 0.3);
+  background: linear-gradient(135deg, rgba(0, 255, 240, 0.9), rgba(147, 51, 234, 0.9));
+  border-color: rgba(0, 255, 240, 0.5);
+}
+
+.course-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.course-link:hover {
+  transform: translateY(-5px);
 }
 
 /* Meet Your Instructor Section */
@@ -2190,11 +2226,12 @@ body:hover::before {
 .contact-content {
   display: grid;
   gap: 3rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-top: 3rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  align-items: stretch;
 }
 
 .contact-form-wrapper {
@@ -2203,6 +2240,9 @@ body:hover::before {
   border-radius: 20px;
   padding: 2rem;
   box-shadow: var(--shadow);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form {
@@ -2277,6 +2317,9 @@ body:hover::before {
   border-radius: 20px;
   overflow: hidden;
   min-height: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-img {
@@ -2317,10 +2360,11 @@ body:hover::before {
 /* Footer */
 .site-footer {
   margin-top: 2.5rem;
-  padding: 1.6rem 0;
+  padding: 2rem 0;
   border-top: 2px solid transparent;
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.2), rgba(13, 17, 23, 0.6));
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.2), rgba(13, 17, 23, 0.8));
   position: relative;
+  backdrop-filter: blur(10px);
 }
 
 .site-footer::before {
@@ -2339,6 +2383,7 @@ body:hover::before {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  min-height: 60px;
 }
 .footer-copy {
   color: #9ba3af;
@@ -2348,6 +2393,7 @@ body:hover::before {
 .socials {
   display: flex;
   gap: .6rem;
+  align-items: center;
 }
 .social-link {
   display: inline-flex;
@@ -2422,7 +2468,7 @@ body:hover::before {
 
   .contact-content {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    align-items: stretch;
   }
   
   .glow-ring {
@@ -2464,6 +2510,38 @@ body:hover::before {
     width: 300px;
     height: 300px;
   }
+  
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .site-footer {
+    padding: 2.5rem 0;
+  }
+  
+  .footer-copy {
+    order: 2;
+    font-size: 0.9rem;
+  }
+  
+  .socials {
+    order: 1;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2492,6 +2570,29 @@ body:hover::before {
   
   .floating-spark {
     width: 3px;
+  }
+  
+  .footer-inner {
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .site-footer {
+    margin-top: 1.5rem;
+    padding: 2rem 0;
+  }
+  
+  .brand {
+    font-size: 1.2rem;
+  }
+  
+  .brand-mark {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .socials {
+    gap: 0.8rem;
     height: 3px;
   }
   
