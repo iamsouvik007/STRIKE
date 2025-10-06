@@ -699,76 +699,6 @@ body:hover::before {
   color: #c9d1d9;
   max-width: 60ch;
 }
-
-/* Hero Statistics Section */
-.hero-stats {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0 1.5rem 0;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-brd);
-  border-radius: var(--radius);
-  backdrop-filter: blur(10px);
-  transition: var(--transition-smooth);
-  min-width: 160px;
-}
-
-.stat-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 240, 0.15);
-}
-
-.stat-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 255, 240, 0.1), rgba(147, 51, 234, 0.1));
-  border: 1px solid rgba(0, 255, 240, 0.2);
-}
-
-.stat-image {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(1.2) drop-shadow(0 0 4px rgba(0, 255, 240, 0.3));
-}
-
-.stat-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.stat-number {
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  text-shadow: 0 0 10px rgba(0, 255, 240, 0.3);
-}
-
-.stat-label {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
 .hero-ctas {
   display: flex;
   gap: .75rem;
@@ -980,26 +910,6 @@ body:hover::before {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .hero-stats {
-    gap: 1rem;
-    margin: 1.5rem 0 1rem 0;
-    padding: 0 1rem;
-  }
-  
-  .stat-item {
-    padding: 0.75rem 1rem;
-    min-width: 140px;
-    gap: 0.5rem;
-  }
-  
-  .stat-number {
-    font-size: 1.25rem;
-  }
-  
-  .stat-label {
-    font-size: 0.8rem;
   }
   
   .hero-ctas {
@@ -1822,8 +1732,9 @@ body:hover::before {
 .course-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .course-details {
@@ -1943,6 +1854,191 @@ body:hover::before {
 .section-instructor {
   padding-block: clamp(4rem, 5vw + 3rem, 7rem);
   background: linear-gradient(135deg, rgba(0, 31, 63, 0.3), var(--bg));
+  position: relative;
+  overflow: hidden;
+}
+
+.instructors-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.instructor-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(0, 255, 240, 0.2);
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+}
+
+.instructor-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 255, 240, 0.4);
+  box-shadow: 
+    0 25px 60px rgba(0, 255, 240, 0.15),
+    0 10px 30px rgba(147, 51, 234, 0.1);
+}
+
+.instructor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 240, 0.05), transparent, rgba(147, 51, 234, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.instructor-card:hover::before {
+  opacity: 1;
+}
+
+.instructor-image {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.instructor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.instructor-card:hover .instructor-img {
+  transform: scale(1.05);
+}
+
+.instructor-glow {
+  position: absolute;
+  inset: -20px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(0, 255, 240, 0.3),
+    rgba(147, 51, 234, 0.3),
+    rgba(0, 255, 240, 0.3)
+  );
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.instructor-card:hover .instructor-glow {
+  opacity: 0.6;
+}
+
+.instructor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.instructor-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  font-size: var(--step-2);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.verified-badge {
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(147, 51, 234, 0.5));
+}
+
+.instructor-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-tag {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(147, 51, 234, 0.6));
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(147, 51, 234, 0.5);
+}
+
+.role-tag.secondary {
+  background: linear-gradient(135deg, rgba(0, 255, 240, 0.2), rgba(0, 255, 240, 0.1));
+  color: var(--primary);
+  border-color: rgba(0, 255, 240, 0.3);
+}
+
+.instructor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 255, 240, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(0, 255, 240, 0.3);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.instructor-bio {
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin: 0;
+  font-size: var(--step-0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .instructor-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .instructor-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .instructor-roles,
+  .instructor-badges {
+    justify-content: center;
+  }
 }
 
 /* Interactive Terminal Section */
@@ -2150,6 +2246,30 @@ body:hover::before {
 .contact-submit {
   justify-self: start;
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-submit .btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-submit .btn-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(64%) sepia(86%) saturate(2490%) hue-rotate(104deg) brightness(119%) contrast(119%);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-submit:hover .btn-icon {
+  transform: translateX(3px);
 }
 
 .contact-image {

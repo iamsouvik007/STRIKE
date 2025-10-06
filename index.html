@@ -78,40 +78,6 @@
             <div class="typing-container">
               <span class="typing-text"></span>
             </div>
-            
-            <!-- Statistics Section -->
-            <div class="hero-stats">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <img src="./learners.png" alt="Students" class="stat-image">
-                </div>
-                <div class="stat-content">
-                  <span class="stat-number">202K+</span>
-                  <span class="stat-label">Students</span>
-                </div>
-              </div>
-              
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <img src="./courses.png" alt="Courses" class="stat-image">
-                </div>
-                <div class="stat-content">
-                  <span class="stat-number">4+</span>
-                  <span class="stat-label">Courses</span>
-                </div>
-              </div>
-              
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <img src="./instructor.png" alt="Instructors" class="stat-image">
-                </div>
-                <div class="stat-content">
-                  <span class="stat-number">2+</span>
-                  <span class="stat-label">Experienced Instructors</span>
-                </div>
-              </div>
-            </div>
-            
             <div class="hero-ctas">
               <a href="#cta" class="btn btn--primary btn--orange btn--lg">Join to the Mission</a>
               <a href="#features" class="btn btn--ghost btn--lg">Explore Features</a>
@@ -494,11 +460,68 @@
       </section> -->
 
       <!-- Meet Your Instructor Section -->
-      <section class="section-instructor">
+      <section class="section-instructor" id="instructor">
         <div class="container">
-          <h2 class="section-title text-center">Meet Your Instructor</h2>
-          <p class="section-lead text-center">Content will be added here later</p>
-          <!-- Instructor content to be added -->
+          <h2 class="section-title text-center">Meet Your <span class="gradient-text">Instructor</span></h2>
+          <p class="section-lead text-center">Learn from industry experts with real-world experience and proven track records</p>
+          
+          <div class="instructors-grid">
+            <!-- Rohit Negi Card -->
+            <div class="instructor-card reveal">
+              <div class="instructor-image">
+                <img src="./rohit.jpg" alt="Rohit Negi" class="instructor-img">
+                <div class="instructor-glow"></div>
+              </div>
+              <div class="instructor-info">
+                <h3 class="instructor-name">
+                  Rohit Negi 
+                  <svg class="verified-badge" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" fill="var(--accent)"/>
+                  </svg>
+                </h3>
+                <div class="instructor-roles">
+                  <span class="role-tag">Founder & Lead Instructor</span>
+                  <span class="role-tag secondary">Ex-@Uber</span>
+                </div>
+                <div class="instructor-badges">
+                  <span class="badge">IIT Graduate</span>
+                  <span class="badge">2 Cr+ Package</span>
+                  <span class="badge">Industry Expert</span>
+                </div>
+                <p class="instructor-bio">
+                  Heartfelt Problem Solver, Instructor, and Visionary Leader. Got Highest Placement in India of 2 Cr +. Post Graduate from IIT G, GATE-CSE'20 AIR - 202
+                </p>
+              </div>
+            </div>
+            
+            <!-- Aditya Tandon Card -->
+            <div class="instructor-card reveal">
+              <div class="instructor-image">
+                <img src="./aditya.jpg" alt="Aditya Tandon" class="instructor-img">
+                <div class="instructor-glow"></div>
+              </div>
+              <div class="instructor-info">
+                <h3 class="instructor-name">
+                  Aditya Tandon 
+                  <svg class="verified-badge" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z" fill="var(--accent)"/>
+                  </svg>
+                </h3>
+                <div class="instructor-roles">
+                  <span class="role-tag">Co-Founder & Senior Instructor</span>
+                  <span class="role-tag secondary">Ex-Ola | Currently @Oyzo</span>
+                </div>
+                <div class="instructor-badges">
+                  <span class="badge">IIT Guwahati</span>
+                  <span class="badge">Ex-Ola</span>
+                  <span class="badge">Scalable Systems & Algorithms Expert</span>
+                </div>
+                <p class="instructor-bio">
+                  Senior Software Engineer passionate about scalable systems and elegant algorithms. Dedicated mentor committed to teaching, learning, and inspiring future developers.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -538,7 +561,7 @@
                 <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number">
               </div>
               
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="course" class="form-label">Course Interest</label>
                 <select id="course" name="course" class="form-select">
                   <option value="">Select a course</option>
@@ -548,19 +571,22 @@
                   <option value="system-design">System Design</option>
                   <option value="all">All Courses</option>
                 </select>
-              </div>
+              </div> -->
               
               <div class="form-group">
                 <label for="message" class="form-label">Message</label>
                 <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your learning goals..." rows="4"></textarea>
               </div>
               
-              <button type="submit" class="btn btn--primary btn--lg contact-submit">Send Message</button>
+              <button type="submit" class="btn btn--primary btn--lg contact-submit">
+                <span class="btn-text">Send Message</span>
+                <img src="./send.png" alt="Send" class="btn-icon">
+              </button>
             </form>
           </div>
           
           <div class="contact-image">
-            <img src="./msg.jpg" alt="Contact us" class="contact-img">
+            <img src="./msg2.png.jpg" alt="Contact us" class="contact-img">
             <div class="contact-overlay">
               <div class="contact-info">
                 <h3>Let's Connect!</h3>
@@ -572,7 +598,7 @@
       </div>
     </section>
 
-     Footer 
+     
     <footer class="site-footer">
       <div class="container footer-inner">
         <a class="brand" href="#home" aria-label="STRIKE Home">
@@ -587,11 +613,11 @@
           </svg>
           <span class="brand-text">STRIKE</span>
         </a>
-        <p class="footer-copy">© <span class="year">2025</span> STRIKE. All rights reserved.</p>
+        <p class="footer-copy">© <span class="year">2025</span> CODER ARMY. All rights reserved.</p>
         <div class="socials" aria-label="Social media">
-          <a class="social-link" href="#" aria-label="GitHub">
+          <a class="social-link" href="#" aria-label="YouTube">
             <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="#c9d1d9" d="M12 .5A12 12 0 0 0 0 12.7c0 5.4 3.4 10 8.2 11.6.6.1.8-.3.8-.6v-2c-3.3.7-4-1.5-4-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.4 0 0 1-.3 3.4 1.3a12 12 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.6 1.8.2 3.1.1 3.4.8.9 1.2 2 1.2 3.3 0 4.7-2.8 5.8-5.5 6.1.4.3.7 1 .7 2v3c0 .3.2.7.8.6 4.8-1.6 8.2-6.2 8.2-11.6A12 12 0 0 0 12 .5z"/>
+              <path fill="#c9d1d9" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </a>
           <a class="social-link" href="#" aria-label="X (Twitter)">
