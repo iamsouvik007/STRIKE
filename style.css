@@ -1,11 +1,5 @@
-/* 
-  STRIKE Landing Page Styles
-  - Futuristic neon aesthetic with glassmorphism
-  - CSS-only animations and hover glows
-  - Mobile-first responsive layout with Grid + Flex
-*/
+/* Radhe Radhe */
 
-/* define theme variables and base tokens */
 :root {
   --bg: #0d1117;
   --rich-black: #0B0C10;
@@ -35,7 +29,6 @@
 
   --container: 1200px;
 
-  /* text sizes with clamp for fluid type */
   --step--1: clamp(0.82rem, 0.79rem + 0.12vw, 0.9rem);
   --step-0: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
   --step-1: clamp(1.15rem, 1.07rem + 0.5vw, 1.35rem);
@@ -45,7 +38,6 @@
   --step-5: clamp(2.6rem, 2.3rem + 2.2vw, 3.8rem);
 }
 
-/* Reset-ish */
 * {
   box-sizing: border-box;
 }
@@ -66,7 +58,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilities */
+
 .container {
   width: 100%;
   max-width: var(--container);
@@ -116,7 +108,7 @@ body {
 }
 
 /* Cursor glow effect */
-/* Professional minimalistic cursor glow with softer transitions */
+
 .cursor-glow {
   position: fixed;
   pointer-events: none;
@@ -138,9 +130,9 @@ body {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Removed old complex animations for cleaner professional look */
 
-/* Enhanced hover detection for global glow */
+
+
 body::before {
   content: '';
   position: fixed;
@@ -157,7 +149,6 @@ body::before {
   transition: all 0.2s ease;
 }
 
-/* Hover state for background glow */
 *:hover + body::before,
 body:hover::before {
   background: radial-gradient(circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%), 
@@ -166,7 +157,7 @@ body:hover::before {
     transparent 70%);
 }
 
-/* CSS-only hover glow for interactive elements */
+
 .btn, .nav-link, .feature-card, .social-link, .mission-card, .course-card {
   position: relative;
   transition: all 0.4s ease-in-out;
@@ -234,7 +225,7 @@ body:hover::before {
   mix-blend-mode: screen;
 }
 
-/* Scrollable Crosshair Container */
+
 .crosshair-decoration {
   position: absolute;
   top: 0;
@@ -245,7 +236,7 @@ body:hover::before {
   z-index: 1;
 }
 
-/* Professional Crosshair Background with Subtle Glow Effects */
+
 .bg-crosshair {
   position: absolute;
   top: 10rem;
@@ -260,7 +251,7 @@ body:hover::before {
   pointer-events: none;
 }
 
-/* Subtle outer glow - very small area */
+
 .bg-crosshair::before {
   content: '';
   position: absolute;
@@ -280,7 +271,7 @@ body:hover::before {
   z-index: -1;
 }
 
-/* Very subtle inner accent */
+
 .bg-crosshair::after {
   content: '';
   position: absolute;
@@ -299,7 +290,7 @@ body:hover::before {
   z-index: -1;
 }
 
-/* Reduced keyframe animations */
+
 @keyframes crosshairGlow {
   0%, 100% {
     opacity: 0.35;
@@ -335,7 +326,7 @@ body:hover::before {
   }
 }
 
-/* Floating Sparks */
+
 .floating-spark {
   position: absolute;
   width: 4px;
@@ -352,7 +343,7 @@ body:hover::before {
 .floating-spark:nth-child(9) { left: 80%; animation-delay: 8s; }
 .floating-spark:nth-child(10) { left: 10%; animation-delay: 1s; }
 
-/* Header - Liquid Glass Transparent Theme */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -529,7 +520,7 @@ body:hover::before {
   transform: translateX(2px);
 }
 
-/* Professional Orange Glow Effect for Get Early Access Button */
+
 .btn--orange {
   --btn-bg: linear-gradient(135deg, rgba(255, 140, 0, 0.12), rgba(255, 165, 0, 0.08));
   --btn-brd: rgba(255, 140, 0, 0.4);
@@ -658,13 +649,13 @@ body:hover::before {
   left: 100%;
 }
 
-/* Hero */
+
 .section-hero {
   padding-block: clamp(3rem, 4vw + 2rem, 6rem);
 }
 
 
-/* Original desktop hero layout */
+
 .hero-inner {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
@@ -674,7 +665,7 @@ body:hover::before {
   position: relative;
   z-index: 2;
 }
-/* Original desktop hero title */
+
 .hero-title {
   font-family: 'Orbitron', var(--font-head);
   font-size: var(--step-5);
@@ -692,14 +683,14 @@ body:hover::before {
   animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
-/* STRIKE word specific styling with stage light effect */
+
 .strike-word {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-/* Base greenish-violet gradient for STRIKE */
+
 .strike-word {
   background: linear-gradient(135deg, var(--ai-green) 0%, rgba(147, 51, 234, 0.9) 100%);
   -webkit-background-clip: text;
@@ -707,7 +698,7 @@ body:hover::before {
   -webkit-text-fill-color: transparent;
 }
 
-/* Mouse-pointer style moving light effect */
+
 .strike-word::before {
   content: '';
   position: absolute;
@@ -785,7 +776,7 @@ body:hover::before {
   }
 }
 
-/* Mission subtitle styling */
+
 .mission-subtitle {
   display: block;
   font-family: 'Orbitron', var(--font-head);
@@ -800,14 +791,14 @@ body:hover::before {
   line-height: 1.2;
 }
 
-/* Original desktop hero tagline */
+
 .hero-tagline {
   margin-top: 1rem;
   font-size: var(--step-1);
   color: #c9d1d9;
   max-width: 60ch;
 }
-/* Original desktop hero CTAs */
+
 .hero-ctas {
   display: flex;
   gap: .75rem;
@@ -1262,7 +1253,7 @@ body:hover::before {
 }
 
 
-/* Hide strike images on tablet and mobile */
+
 @media (max-width: 1024px) {
   .section-mission {
     background: linear-gradient(135deg, rgba(13, 17, 23, 0.8), rgba(0, 31, 63, 0.7));
@@ -1308,7 +1299,7 @@ body:hover::before {
   font-size: var(--step-1);
 }
 
-/* Original desktop mission cards */
+
 .mission-cards {
   display: flex;
   gap: 2rem;
@@ -1583,7 +1574,7 @@ body:hover::before {
     gap: 1.5rem;
   }
   
-  /* Make video demo appear first on tablet */
+  
   .video-demo {
     order: -1;
     grid-column: span 2;
@@ -1601,7 +1592,7 @@ body:hover::before {
     padding: 0 1rem;
   }
   
-  /* Make video demo appear first on mobile */
+  
   .video-demo {
     order: -1;
     grid-column: span 1;
@@ -2267,7 +2258,7 @@ body:hover::before {
   }
 }
 
-/* Career Potential Section */
+
 .section-career {
   padding-block: clamp(4rem, 5vw + 3rem, 6rem);
   position: relative;
@@ -2958,7 +2949,7 @@ body:hover::before {
   animation: none;
 }
 
-/* If supported, use scroll timelines for true on-scroll reveal */
+
 @supports (animation-timeline: view()) {
   .reveal {
     opacity: 1;
@@ -3001,7 +2992,7 @@ body:hover::before {
   }
 }
 
-/* Original desktop defaults restored */
+
 
 /* Animations */
 @keyframes gridFloat {
@@ -3181,12 +3172,7 @@ body:hover::before {
   transition-timing-function: ease-in-out;
 }
 
-/* =================================
-   MOBILE-ONLY RESPONSIVE STYLES
-   (Desktop view remains unchanged)
-   ================================= */
 
-/* Mobile phones (up to 767px) */
 @media (max-width: 767px) {
   /* Container spacing for mobile */
   .container {
@@ -3194,7 +3180,7 @@ body:hover::before {
     padding-right: 1rem;
   }
   
-  /* Mobile Hero Section */
+  
   .hero-inner {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
@@ -3334,7 +3320,7 @@ body:hover::before {
   /* Mobile Forms */
   .form-input, .form-select, .form-textarea {
     padding: 1rem !important;
-    font-size: 16px !important; /* Prevents zoom on iOS */
+    font-size: 16px !important; 
     border-radius: 8px !important;
   }
   
@@ -3424,7 +3410,7 @@ body:hover::before {
   }
 }
 
-/* Large mobile phones and small tablets (768px - 1023px) */
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .hero-inner {
     grid-template-columns: 1fr !important;
@@ -3480,7 +3466,7 @@ body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="3" fill="%2300fff0" opacity="1"/><circle cx="16" cy="16" r="12" fill="none" stroke="%2300fff0" stroke-width="2" opacity="0.8"/></svg>') 16 16, crosshair;
 }
 
-/* Pointer cursor for interactive elements */
+
 button, 
 a, 
 .btn, 
@@ -3510,13 +3496,13 @@ textarea,
   transition-duration: 0.2s;
 }
 
-/* Ensure all interactive elements are fully visible */
+
 .btn, .nav-link, .feature-card, .social-link, .mission-card, .course-card {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Accessibility and polish */
+
 :focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
@@ -3529,12 +3515,12 @@ a {
   text-wrap: balance;
 }
 
-/* Minor niceties */
+
 .year::after {
   content: "";
 }
 
-/* Ensure anchor targets aren't hidden behind sticky header */
+
 [id] {
   scroll-margin-top: 88px;
 }
