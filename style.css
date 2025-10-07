@@ -248,7 +248,7 @@ body:hover::before {
 /* Professional Crosshair Background with Subtle Glow Effects */
 .bg-crosshair {
   position: absolute;
-  top: 8rem;
+  top: 10rem;
   left: 26rem;
   width: 210px;
   height: 210px;
@@ -664,12 +664,17 @@ body:hover::before {
 }
 
 
+/* Original desktop hero layout */
 .hero-inner {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 4rem;
   align-items: center;
-  grid-template-columns: 1fr;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 2;
 }
+/* Original desktop hero title */
 .hero-title {
   font-family: 'Orbitron', var(--font-head);
   font-size: var(--step-5);
@@ -795,12 +800,14 @@ body:hover::before {
   line-height: 1.2;
 }
 
+/* Original desktop hero tagline */
 .hero-tagline {
   margin-top: 1rem;
   font-size: var(--step-1);
   color: #c9d1d9;
   max-width: 60ch;
 }
+/* Original desktop hero CTAs */
 .hero-ctas {
   display: flex;
   gap: .75rem;
@@ -941,6 +948,7 @@ body:hover::before {
   place-items: center;
 }
 
+/* Original desktop code container */
 .code-container {
   --br: 20px;
   width: min(820px, 95%);
@@ -970,58 +978,13 @@ body:hover::before {
   transform: scale(1.02);
 }
 
-/* Hero Section Responsive Improvements */
-@media (max-width: 1024px) {
-  .code-container {
-    width: min(700px, 95%);
-    height: 400px;
-  }
-  
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .hero-visual {
-    order: 2;
-  }
-  
-  .hero-copy {
-    order: 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .code-container {
-    width: min(100%, 95%);
-    height: 350px;
-    --br: 12px;
-  }
-  
-  .hero-title {
-    font-size: var(--step-3);
-  }
-  
-  .mission-subtitle {
-    font-size: var(--step-1);
-  }
-  
-  .hero-tagline {
-    font-size: var(--step-0);
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .hero-ctas {
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .code-container:hover {
-    transform: scale(1.01);
-  }
+.code-container:hover {
+  border-color: rgba(147, 51, 234, 0.6);
+  box-shadow: 
+    var(--shadow),
+    0 0 80px rgba(147, 51, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
 }
 
 .code-header {
@@ -1055,6 +1018,7 @@ body:hover::before {
   font-weight: 500;
 }
 
+/* Original desktop code editor */
 .code-editor {
   display: flex;
   background: transparent;
@@ -1161,6 +1125,7 @@ body:hover::before {
   }
 }
 
+/* Original desktop terminal output */
 .terminal-output {
   background: transparent;
   border-top: 2px solid rgba(0, 255, 240, 0.3);
@@ -1343,6 +1308,7 @@ body:hover::before {
   font-size: var(--step-1);
 }
 
+/* Original desktop mission cards */
 .mission-cards {
   display: flex;
   gap: 2rem;
@@ -1599,10 +1565,11 @@ body:hover::before {
 .section-features {
   padding-block: clamp(3rem, 4vw + 2rem, 5rem);
 }
+/* Mobile-first features grid */
 .features-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   margin-top: 2.5rem;
   max-width: 1200px;
   margin-left: auto;
@@ -1877,6 +1844,7 @@ body:hover::before {
   background: linear-gradient(180deg, var(--bg), rgba(0, 31, 63, 0.2));
 }
 
+/* Original desktop free courses grid */
 .free-courses-grid {
   display: grid;
   gap: 2rem;
@@ -3011,7 +2979,6 @@ body:hover::before {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
   .contact-content {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
@@ -3034,144 +3001,7 @@ body:hover::before {
   }
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-  }
-  
-  .typing-container {
-    font-size: 0.9rem;
-  }
-  
-  .terminal-container {
-    margin: 0 1rem;
-  }
-  
-  .terminal-content {
-    padding: 20px;
-    font-size: 0.85rem;
-  }
-  
-  .glow-ring {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-  
-  .site-footer {
-    padding: 2.5rem 0;
-  }
-  
-  .footer-copy {
-    order: 2;
-    font-size: 0.9rem;
-  }
-  
-  .socials {
-    order: 1;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .social-link {
-    padding: 0.5rem;
-    border-radius: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-tagline {
-    font-size: 1rem;
-  }
-  
-  .typing-container {
-    font-size: 0.8rem;
-    height: 25px;
-  }
-  
-  .btn--lg {
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .glow-ring {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .floating-spark {
-    width: 3px;
-  }
-  
-  .footer-inner {
-    gap: 1rem;
-    padding: 0.5rem 0;
-  }
-  
-  .site-footer {
-    margin-top: 1.5rem;
-    padding: 2rem 0;
-  }
-  
-  .brand {
-    font-size: 1.2rem;
-  }
-  
-  .brand-mark {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .socials {
-    gap: 0.8rem;
-    height: 3px;
-  }
-  
-  /* Additional mobile improvements */
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .section-title {
-    font-size: var(--step-2);
-  }
-  
-  .section-lead {
-    font-size: var(--step-0);
-  }
-  
-  .code-container {
-    height: 300px;
-    margin: 0 0.5rem;
-  }
-  
-  .hero-ctas {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .mission-subtitle {
-    font-size: var(--step-0);
-    margin-top: 0.25rem;
-  }
-}
+/* Original desktop defaults restored */
 
 /* Animations */
 @keyframes gridFloat {
@@ -3239,9 +3069,9 @@ body:hover::before {
 }
 
 @keyframes changeText {
-  0%, 45% { content: '> Presented by CODER ARMY......'; }
-  50%, 75% { content: '> Join to the DSA and GenAI mission & learn from experts'; }
-  80%, 100% { content: '> Learn concepts in depth and make real world projects '; }
+  0%, 45% { content: '> STRIKE -Presented by CODER ARMY...'; }
+  50%, 75% { content: '> Enroll in this premium course';}
+  80%, 100% { content: '> Master concepts.Build real projects.';}
 }
 
 @keyframes pulseRing {
@@ -3349,6 +3179,301 @@ body:hover::before {
 * {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
+}
+
+/* =================================
+   MOBILE-ONLY RESPONSIVE STYLES
+   (Desktop view remains unchanged)
+   ================================= */
+
+/* Mobile phones (up to 767px) */
+@media (max-width: 767px) {
+  /* Container spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile Hero Section */
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+    padding: 1.5rem 0 !important;
+  }
+  
+  .hero-copy {
+    order: 1;
+  }
+  
+  .hero-visual {
+    order: 2;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-tagline {
+    text-align: center !important;
+    margin: 1rem auto 0 !important;
+    max-width: 90% !important;
+    font-size: 1rem !important;
+  }
+  
+  .hero-ctas {
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  
+  /* Mobile Typing Animation - Left aligned */
+  .typing-container {
+    text-align: left !important;
+    margin: 20px 0 30px 0 !important;
+  }
+  
+  .typing-text {
+    text-align: left !important;
+  }
+  
+  /* Mobile Code Container - Fix the terminal output visibility issue */
+  .code-container {
+    width: 95% !important;
+    height: 380px !important;
+    --br: 12px !important;
+    margin: 0 auto !important;
+  }
+  
+  .code-editor {
+    min-height: 180px !important;
+    flex: 0 0 auto !important;
+  }
+  
+  .terminal-output {
+    min-height: 120px !important;
+    flex: 1 !important;
+    display: flex !important;
+  }
+  
+  .code-content, .output-content {
+    font-size: 12px !important;
+    padding: 10px !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  
+  .code-line, .output-line {
+    text-align: left !important;
+    justify-self: flex-start !important;
+    align-self: flex-start !important;
+  }
+  
+  .line-numbers {
+    font-size: 11px !important;
+    padding: 10px 6px !important;
+    min-width: 30px !important;
+  }
+  
+  /* Mobile Navigation */
+  .nav {
+    display: none !important;
+  }
+  
+  .header-inner {
+    justify-content: space-between !important;
+  }
+  
+  /* Mobile Typography */
+  .section-title {
+    font-size: var(--step-2) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .section-lead {
+    font-size: var(--step-0) !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Mobile Grids */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .mission-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .free-courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .instructors-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Mobile Contact Section */
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Mobile Forms */
+  .form-input, .form-select, .form-textarea {
+    padding: 1rem !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 8px !important;
+  }
+  
+  /* Mobile Footer */
+  .footer-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 1rem !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .footer-copy {
+    order: 2 !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .socials {
+    order: 1 !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+  
+  /* Mobile Brand */
+  .brand {
+    font-size: 1.2rem !important;
+  }
+  
+  .brand-mark {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Mobile Visual Effects */
+  .glow-ring {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  
+  .floating-spark {
+    width: 3px !important;
+  }
+  
+  /* Mobile Touch Targets */
+  .btn, .nav-link, .social-link {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Mobile Mission Subtitle */
+  .mission-subtitle {
+    font-size: var(--step-0) !important;
+    margin-top: 0.25rem !important;
+  }
+  
+  /* Mobile Animations */
+  .typing-container {
+    font-size: 0.8rem !important;
+    height: 25px !important;
+  }
+  
+  /* Mobile Button Improvements */
+  .btn--lg {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Mobile Improvements */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mission-card, .feature-card, .course-card-flip {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+  
+  .video-wrapper iframe {
+    border-radius: 8px;
+  }
+  
+  .site-footer {
+    margin-top: 1.5rem !important;
+    padding: 2rem 0 !important;
+  }
+}
+
+/* Large mobile phones and small tablets (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    text-align: center !important;
+  }
+  
+  .hero-copy {
+    order: 1;
+  }
+  
+  .hero-visual {
+    order: 2;
+  }
+  
+  .code-container {
+    width: min(700px, 95%) !important;
+    height: 420px !important;
+  }
+  
+  /* Tablet Code Animation - Left aligned */
+  .code-content, .output-content {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  
+  .code-line, .output-line {
+    text-align: left !important;
+    justify-self: flex-start !important;
+    align-self: flex-start !important;
+  }
+  
+  .typing-container {
+    text-align: left !important;
+  }
+  
+  .typing-text {
+    text-align: left !important;
+  }
+  
+  .mission-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .free-courses-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 body {
