@@ -10,14 +10,13 @@ STRIKE is Coder Army's upcoming premium paid course platform launching in Q1 202
 
 ## Screenshots
 
-### Desktop View
-![Desktop Screenshot](./screenshots/desktop-view.png)
+### Project Demo
+![STRIKE Platform Demo](./assets/demopage.png)
+
+
 
 ### Mobile View  
 ![Mobile Screenshot](./screenshots/mobile-view.png)
-
-### Interactive Features
-![Features Screenshot](./screenshots/features-section.png)
 
 ## Key Features
 
